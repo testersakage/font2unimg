@@ -6,4 +6,4 @@ MSゴシック等のTrueTypeフォント（固定幅）をLuanti/Minecloniaに�
 
 注意：生成されたPNG画像はそのままではLuantiが対応していないので利用できません。
 
-コードの生成にCpilotを利用しています。
+コードの生成にCopilotを利用しています。
