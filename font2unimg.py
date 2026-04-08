@@ -13,6 +13,10 @@ FONT_SIZE = 12
 SMOOTH = True
 COLOR = (255,255,255,255)  # default white
 
+# --- shift オプション追加 ---
+SHIFT_X = 0
+SHIFT_Y = 0
+
 HELP_TEXT = """
 Usage:
   python font2unimg.py [options]
@@ -26,10 +30,12 @@ Options:
   -size=<px>          フォントサイズ(px)。デフォルト: 12
   -smooth=on/off      アンチエイリアスの有無
   -color=w/b          文字色（white / black）
+  -shift=x,y          描画位置の補正(px)
 """
 
 def parse_args():
     global CELL, GRID_W, GRID_H, PREFIX, SAVE_DIR, FONT_PATH, FONT_SIZE, SMOOTH, COLOR
+    global SHIFT_X, SHIFT_Y
 
     if len(sys.argv) == 1:
         print(HELP_TEXT)
@@ -70,13 +76,24 @@ def parse_args():
                 print("Invalid -color (use w or b)")
                 sys.exit(1)
 
+        # --- shift オプション追加 ---
+        elif arg.startswith("-shift="):
+            xy = arg.split("=")[1]
+            if "," in xy:
+                sx, sy = xy.split(",")
+                SHIFT_X = int(sx)
+                SHIFT_Y = int(sy)
+            else:
+                print("Invalid -shift (use -shift=x,y)")
+                sys.exit(1)
+
         else:
             print(f"Unknown option: {arg}")
             print(HELP_TEXT)
             sys.exit(1)
 
     os.makedirs(SAVE_DIR, exist_ok=True)
-
+    
 
 def render_glyph(ch, font, cell, smooth):
     if cell < 16:
@@ -132,8 +149,11 @@ def draw_page(page, font):
 
         dx = (CELL - w) // 2
         dy = (CELL - ascent) // 2
-        dy -= 1  # Pillow の仕様で 1px 下に寄るため補正
 
+        # --- shift オプション適用 ---
+        dx += SHIFT_X
+        dy += SHIFT_Y
+        
         g_rgba = Image.new("RGBA", (w, h), COLOR)
         g_rgba.putalpha(glyph)
 
