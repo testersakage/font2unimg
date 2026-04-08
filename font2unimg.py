@@ -30,7 +30,7 @@ Options:
   -size=<px>          フォントサイズ(px)。デフォルト: 12
   -smooth=on/off      アンチエイリアスの有無
   -color=w/b          文字色（white / black）
-  -shift=x,y          描画位置の補正(px)
+  -shift="x,y"        描画位置の補正(px)
 """
 
 def parse_args():
