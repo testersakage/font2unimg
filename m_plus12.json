@@ -1,0 +1,65 @@
+{
+    "load_path": "E:/Fonts/PixelMplus12-Regular.ttf",
+    "height": 12,
+    "width": 12,
+    "smooth": false,
+    "threshold": 127,
+    "save_dir": "z:/unicode_pages",
+    "auto_crop": false,
+    "auto_padding": false,
+    "shift_x": 0,
+    "shift_y": 0,
+    "upscale": 4,
+    "special_shifts": [
+        {
+            "chars": "ij",
+            "x": 0,
+            "y": -1
+        },
+        {
+            "chars": "()[]{|}！”＃＄％＆’（）｜ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ［］＾＿ｂｄｆｈｉｊｋｌｔ｛｝，．／￥",
+            "x": 0,
+            "y": 0
+        },
+        {
+            "chars": "!#$%&'`/0123456789:;<>?~@ABCDEFGHIJKLMNOPQRSTUVWXYZ`bdfhijklt~くぐしじそぞにひふべぺほみりるろゐんアイコシスソチツテヌノハフムモレラヮワヲン０１２３４５６７８９＜＞？",
+            "x": 0,
+            "y": 1
+        },
+        {
+            "chars": "* 」』いこごてでコニマミロユヨヱ；：",
+            "x": 0,
+            "y": 2
+        },
+        {
+            "chars": "+~つのぁぅぇぉゃゅょゎエゥォャヮヵヶ＝～ａｃｅｇｍｎｏｐｑｒｓｕｖｗｘｙｚｨｩｫｬ",
+            "x": 0,
+            "y": 3
+        },
+        {
+            "chars": "=gpqyacemnorsuvwxzぃァィェッュョへヘｧｪｭｮｯ･ｰ",
+            "x": 0,
+            "y": 4
+        },
+        {
+            "chars": "-っ",
+            "x": 0,
+            "y": 5
+        },
+        {
+            "chars": ",.・ー",
+            "x": 0,
+            "y": 6
+        },
+        {
+            "chars": "。",
+            "x": 0,
+            "y": 7
+        },
+        {
+            "chars": "_、",
+            "x": 0,
+            "y": 8
+        }
+    ]
+}
